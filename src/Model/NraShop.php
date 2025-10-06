@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Component\Nra\Audit\Model;
+namespace Dakataa\NraAudit\Model;
 
-use App\Component\Nra\Audit\Enum\ShopTypeEnum;
-use App\Component\Nra\Audit\Model\Interface\NraShopInterface;
+use Dakataa\NraAudit\Enum\ShopTypeEnum;
+use Dakataa\NraAudit\Model\Interface\NraShopInterface;
 
 readonly class NraShop implements NraShopInterface
 {

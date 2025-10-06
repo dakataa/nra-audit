@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Component\Nra\Audit\Model;
+namespace Dakataa\NraAudit\Model;
 
-use App\Component\Nra\Audit\Model\Interface\NraOrderArticleInterface;
+use Dakataa\NraAudit\Model\Interface\NraOrderArticleInterface;
 
 readonly class NraOrderArticle implements NraOrderArticleInterface
 {

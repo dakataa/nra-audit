@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Component\Nra\Audit\Model;
+namespace Dakataa\NraAudit\Model;
 
-use App\Component\Nra\Audit\Enum\PaymentMethodEnum;
-use App\Component\Nra\Audit\Enum\ReturnPaymentMethodEnum;
-use App\Component\Nra\Audit\Model\Interface\NraDocumentInterface;
+use Dakataa\NraAudit\Enum\PaymentMethodEnum;
+use Dakataa\NraAudit\Enum\ReturnPaymentMethodEnum;
+use Dakataa\NraAudit\Model\Interface\NraDocumentInterface;
 use DateTimeInterface;
 
 readonly class NraDocument implements NraDocumentInterface

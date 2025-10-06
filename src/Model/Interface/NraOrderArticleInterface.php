@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Component\Nra\Audit\Model\Interface;
+namespace Dakataa\NraAudit\Model\Interface;
 
 interface NraOrderArticleInterface
 {
