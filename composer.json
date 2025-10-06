@@ -1,19 +1,21 @@
 {
-    "name": "dakataa/nra-audit",
-    "description": "Bulgarian National Revenue Agency Audit File Generator (Alternative reporting)",
-    "type": "library",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Dakataa\\NraAudit\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Yordan Lazarov"
-        }
-    ],
-    "require": {
-		"php": ">=8.2"
+	"name": "dakataa/nra-audit",
+	"description": "Bulgarian National Revenue Agency Audit File Generator (Alternative reporting)",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Dakataa\\NraAudit\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Yordan Lazarov",
+			"email": "yor.lazarov@gmail.com"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {
+		"php": ">=8.1"
 	}
 }

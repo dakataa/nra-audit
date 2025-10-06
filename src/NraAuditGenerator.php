@@ -2,11 +2,11 @@
 
 namespace App\Component\Nra\Audit;
 
-use App\Component\Nra\Audit\Model\Interface\NraOrderArticleInterface;
-use App\Component\Nra\Audit\Model\NraOrder;
-use App\Component\Nra\Audit\Model\NraShop;
-use App\Component\Nra\Audit\Repository\NraOrderRepositoryInterface;
-use App\Component\Nra\Audit\Repository\NraShopRepositoryInterface;
+use Dakataa\NraAudit\Model\Interface\NraOrderArticleInterface;
+use Dakataa\NraAudit\Model\NraOrder;
+use Dakataa\NraAudit\Model\NraShop;
+use Dakataa\NraAudit\Repository\NraOrderRepositoryInterface;
+use Dakataa\NraAudit\Repository\NraShopRepositoryInterface;
 use DateTimeImmutable;
 use DOMDocument;
 use DOMElement;

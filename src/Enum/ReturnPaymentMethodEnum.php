@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Component\Nra\Audit\Enum;
+namespace Dakataa\NraAudit\Enum;
 
 enum ReturnPaymentMethodEnum: int
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Component\Nra\Audit\Model\Interface;
+namespace Dakataa\NraAudit\Model\Interface;
 
-use App\Component\Nra\Audit\Enum\ShopTypeEnum;
+use Dakataa\NraAudit\Enum\ShopTypeEnum;
 
 interface NraShopInterface
 {

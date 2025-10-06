@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Component\Nra\Audit\Repository;
+namespace Dakataa\NraAudit\Repository;
 
 interface NraDocumentRepositoryInterface
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Component\Nra\Audit\Repository;
+namespace Dakataa\NraAudit\Repository;
 
-use App\Component\Nra\Audit\Model\Interface\NraShopInterface;
+use Dakataa\NraAudit\Model\Interface\NraShopInterface;
 use Generator;
 
 interface NraShopRepositoryInterface

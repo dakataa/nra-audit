@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Component\Nra\Audit\Model\Interface;
+namespace Dakataa\NraAudit\Model\Interface;
 
-use App\Component\Nra\Audit\Enum\PaymentMethodEnum;
-use App\Component\Nra\Audit\Enum\ReturnPaymentMethodEnum;
+use Dakataa\NraAudit\Enum\PaymentMethodEnum;
+use Dakataa\NraAudit\Enum\ReturnPaymentMethodEnum;
 use DateTimeInterface;
 
 interface NraOrderInterface
