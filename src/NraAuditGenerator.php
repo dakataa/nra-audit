@@ -1,23 +1,21 @@
 <?php
 
-namespace App\Component\Nra\Audit;
+namespace Dakataa\NraAudit;
 
 use Dakataa\NraAudit\Model\Interface\NraOrderArticleInterface;
 use Dakataa\NraAudit\Model\NraOrder;
 use Dakataa\NraAudit\Model\NraShop;
 use Dakataa\NraAudit\Repository\NraOrderRepositoryInterface;
-use Dakataa\NraAudit\Repository\NraShopRepositoryInterface;
 use DateTimeImmutable;
 use DOMDocument;
 use DOMElement;
 use DOMException;
 use Exception;
 
-readonly class NraAuditGenerator
+class NraAuditGenerator
 {
 
 	public function __construct(
-		protected NraShopRepositoryInterface $shopRepository,
 		protected NraOrderRepositoryInterface $orderRepository,
 	) {
 	}
@@ -42,7 +40,7 @@ readonly class NraAuditGenerator
 				'ord_n' => $order->getNraNumber(),
 				'ord_d' => $order->getNraDate()->format('Y-m-d'),
 				'doc_n' => sprintf('%010d', $order->getNraDocument()?->getNraNumber()),
-				'doc_date' => $order->getNraDocument()?->getNraDate()->format('Y-m-d'),
+				'doc_date' => ($order->getNraDocument()?->getNraDate() ?: $order->getNraDate())->format('Y-m-d'),
 				'art' => [
 					'artenum' => array_map(fn(NraOrderArticleInterface $article) => [
 						'art_name' => $article->getNraName(),

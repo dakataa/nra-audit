@@ -4,7 +4,7 @@ namespace Dakataa\NraAudit\Model;
 
 use Dakataa\NraAudit\Model\Interface\NraOrderArticleInterface;
 
-readonly class NraOrderArticle implements NraOrderArticleInterface
+class NraOrderArticle implements NraOrderArticleInterface
 {
 	public function __construct(
 		private string $name,
