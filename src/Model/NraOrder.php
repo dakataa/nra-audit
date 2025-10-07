@@ -8,7 +8,7 @@ use Dakataa\NraAudit\Model\Interface\NraDocumentInterface;
 use Dakataa\NraAudit\Model\Interface\NraOrderInterface;
 use DateTimeInterface;
 
-readonly class NraOrder implements NraOrderInterface
+class NraOrder implements NraOrderInterface
 {
 	public function __construct(
 		private string $number,

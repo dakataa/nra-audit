@@ -5,7 +5,7 @@ namespace Dakataa\NraAudit\Model;
 use Dakataa\NraAudit\Enum\ShopTypeEnum;
 use Dakataa\NraAudit\Model\Interface\NraShopInterface;
 
-readonly class NraShop implements NraShopInterface
+class NraShop implements NraShopInterface
 {
 	public function __construct(
 		private string $eik,

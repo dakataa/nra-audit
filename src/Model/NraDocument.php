@@ -7,7 +7,7 @@ use Dakataa\NraAudit\Enum\ReturnPaymentMethodEnum;
 use Dakataa\NraAudit\Model\Interface\NraDocumentInterface;
 use DateTimeInterface;
 
-readonly class NraDocument implements NraDocumentInterface
+class NraDocument implements NraDocumentInterface
 {
 	public function __construct(
 		private int $number,
