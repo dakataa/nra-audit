@@ -15,4 +15,6 @@ interface NraOrderRepositoryInterface
 	 * @return NraOrderInterface[]
 	 */
 	public function getOrdersByShop(NraShopInterface $shop, int $year = null, int $month = null): Generator;
+
+	public function getOrderByNumber(int|string $number): ?NraOrderInterface;
 }

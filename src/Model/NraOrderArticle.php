@@ -41,6 +41,6 @@ class NraOrderArticle implements NraOrderArticleInterface
 
 	public function getNraTotalAmount(): string
 	{
-		return bcadd($this->amount, $this->getNraVatAmount(), 2);
+		return $this->amount * $this->quantity;
 	}
 }
