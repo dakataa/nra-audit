@@ -11,6 +11,7 @@ use DOMDocument;
 use DOMElement;
 use DOMException;
 use Exception;
+use LibXMLError;
 
 class NraAuditGenerator
 {
@@ -101,12 +102,14 @@ class NraAuditGenerator
 		$document->appendChild($rootElement);
 
 		$generate = function (array $data, DOMElement $parentElement) use ($document, &$generate) {
-			$createElement = function (string $key, string|array $value) use ($document, $parentElement, &$generate) {
+			$createElement = function (string $key, string|array|null $value) use ($document, $parentElement, &$generate) {
 				$element = $document->createElement($key);
-				if (is_array($value)) {
-					$generate($value, $element);
-				} else {
-					$element->append($value);
+				if(null !== $value) {
+					if (is_array($value)) {
+						$generate($value, $element);
+					} else {
+						$element->append($value);
+					}
 				}
 
 				$parentElement->appendChild($element);
@@ -127,8 +130,11 @@ class NraAuditGenerator
 
 		$generate($data, $rootElement);
 
+		libxml_use_internal_errors(true);
 		if (false === $document->schemaValidate(__DIR__.DIRECTORY_SEPARATOR.'Resource/dec_audit.xsd')) {
-			throw new Exception('Invalid Audit XML');
+			$errors = libxml_get_errors();
+			$messages = array_map(fn(LibXMLError $error) => $error->message, $errors);
+			throw new Exception('Invalid Audit XML.'.implode(' ', $messages));
 		}
 
 		return $document;
