@@ -94,27 +94,34 @@ class NraAuditGenerator
 			] : []),
 		];
 
+
 		$document = new DOMDocument("1.0", "windows-1251");
+		$document->formatOutput = true;
 		$rootElement = $document->createElement('audit');
 		$document->appendChild($rootElement);
 
 		$generate = function (array $data, DOMElement $parentElement) use ($document, &$generate) {
-			foreach ($data as $key => $value) {
-				$isSimpleArray = is_array($value) && empty(array_filter($value, 'is_string', ARRAY_FILTER_USE_KEY));
-				if (!$isSimpleArray) {
-					$value = [$value];
-				}
-
-				foreach ($value as $elementValue) {
-					$element = $document->createElement($key);
-					if (is_array($elementValue)) {
-						$generate($elementValue, $element);
-					} else {
-						$element->append((string)$elementValue);
-					}
+			$createElement = function (string $key, string|array $value) use ($document, $parentElement, &$generate) {
+				$element = $document->createElement($key);
+				if (is_array($value)) {
+					$generate($value, $element);
+				} else {
+					$element->append($value);
 				}
 
 				$parentElement->appendChild($element);
+			};
+
+			foreach ($data as $key => $value) {
+				$isSimpleArray = is_array($value) && empty(array_filter($value, 'is_string', ARRAY_FILTER_USE_KEY));
+				if ($isSimpleArray) {
+					foreach ($value as $elementValue) {
+						$createElement($key, $elementValue);
+					}
+				} else {
+					$createElement($key, $value);
+				}
+
 			}
 		};
 
