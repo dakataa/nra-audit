@@ -41,11 +41,11 @@ class NraOrderRepository implements NraOrderRepositoryInterface
 {
 	public function getOrderByNumber(int|string $number): ?NraOrderInterface {
        
-        // Your implementation
-        
-        return new NraOrder(
-            ...
-        )
+		// ... your implementation
+
+		return new NraOrder(
+		    ...
+		);
 	}
 	
 	public function getOrdersByShop(NraShopInterface $shop, int $year = null, int $month = null): Generator
