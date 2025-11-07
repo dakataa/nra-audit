@@ -65,7 +65,7 @@ class NraOrder implements NraOrderInterface
 
 	public function getNraAmount(): string
 	{
-		return $this->amount;
+		return bcsub($this->amount, $this->getNraVatAmount(), 2);
 	}
 
 	public function getNraVatAmount(): string
