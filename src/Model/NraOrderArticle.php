@@ -36,7 +36,7 @@ class NraOrderArticle implements NraOrderArticleInterface
 
 	public function getNraVatAmount(): string
 	{
-		return bcmul($this->amount, bcdiv($this->vatRate, 100, 2), 2);
+		return bcsub($this->amount, bcdiv($this->amount, bcadd(1, bcdiv($this->vatRate, 100, 2), 2), 3), 2);
 	}
 
 	public function getNraTotalAmount(): string
